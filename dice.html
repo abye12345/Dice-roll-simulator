@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dice.css" />
+    <title>Dice Roll Simulator</title>
+  </head>
+  <body>
+    <div class="dice">
+      <h1>Dice Roll Simulator</h1>
+      <div class="rotate" id="demo2">Roll</div>
+      <button onclick="rand()">Roll Dice</button>
+    </div>
+    <script>
+      function rand() {
+        let dice = document.getElementById("demo2");
+        dice.textContent = ""; // Clear the number before rolling
+        let rotate = document.getElementById("demo2");
+        rotate.style.transform = "rotate(2880deg)";
+
+        setTimeout(() => {
+          let randomnumber = Math.floor(Math.random() * 6) + 1;
+          dice.textContent = randomnumber;
+          rotate.style.transform = "none";
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
