@@ -11,8 +11,6 @@ A simple and interactive web-based dice roll simulator that allows users to roll
 
 ## Live Demo
 
-Visit the live demo at: [Dice Roll Simulator](https://abye12345.github.io/Dice-roll-simulator/)
-
 ## How to Use
 
 1. Click the "Roll Dice" button
