@@ -2,14 +2,18 @@
 
 A simple and interactive web-based dice roll simulator that allows users to roll a virtual dice with animation effects.
 
+## 🚀 Live Demo
+
+Try it here: [https://abye12345.github.io/Dice-roll-simulator/](https://abye12345.github.io/Dice-roll-simulator/)
+
 ## Features
 
 - Interactive dice roll animation
 - Random number generation (1-6)
 - Clean and responsive design
 - Smooth transition effects
-
-## Live Demo
+- Multiple dice selection
+- Auto roll, statistics, and roll history
 
 ## How to Use
 
