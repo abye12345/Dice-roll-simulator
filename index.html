@@ -3,28 +3,105 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Dice Roll Simulator</title>
     <link rel="stylesheet" href="dice.css" />
-    <title>Dice Roll Simulator</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
   </head>
   <body>
-    <div class="dice">
-      <h1>Dice Roll Simulator</h1>
-      <div class="rotate" id="demo2">Roll</div>
-      <button onclick="rand()">Roll Dice</button>
-    </div>
-    <script>
-      function rand() {
-        let dice = document.getElementById("demo2");
-        dice.textContent = ""; // Clear the number before rolling
-        let rotate = document.getElementById("demo2");
-        rotate.style.transform = "rotate(2880deg)";
+    <div class="container">
+      <header class="header">
+        <h1><i class="fas fa-dice"></i> Advanced Dice Roll Simulator</h1>
+        <p>Roll virtual dice with amazing animations and track your results!</p>
+      </header>
 
-        setTimeout(() => {
-          let randomnumber = Math.floor(Math.random() * 6) + 1;
-          dice.textContent = randomnumber;
-          rotate.style.transform = "none";
-        }, 1000);
-      }
-    </script>
+      <main class="main-content">
+        <div class="controls-section">
+          <div class="dice-selector">
+            <label for="diceCount">Number of Dice:</label>
+            <select id="diceCount">
+              <option value="1">1 Dice</option>
+              <option value="2">2 Dice</option>
+              <option value="3">3 Dice</option>
+              <option value="4">4 Dice</option>
+              <option value="5">5 Dice</option>
+            </select>
+          </div>
+
+          <div class="roll-controls">
+            <button id="rollBtn" class="roll-btn">
+              <i class="fas fa-dice"></i> Roll Dice
+            </button>
+            <button id="autoRollBtn" class="auto-roll-btn">
+              <i class="fas fa-play"></i> Auto Roll
+            </button>
+            <button id="stopAutoBtn" class="stop-btn" style="display: none">
+              <i class="fas fa-stop"></i> Stop
+            </button>
+          </div>
+        </div>
+
+        <div class="dice-container" id="diceContainer">
+          <!-- Dice will be generated here -->
+        </div>
+
+        <div class="results-section">
+          <div class="current-roll">
+            <h3>Current Roll</h3>
+            <div class="roll-result" id="rollResult">-</div>
+            <div class="roll-total" id="rollTotal">Total: -</div>
+          </div>
+
+          <div class="statistics">
+            <h3>Statistics</h3>
+            <div class="stats-grid">
+              <div class="stat-item">
+                <span class="stat-label">Total Rolls:</span>
+                <span class="stat-value" id="totalRolls">0</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Average:</span>
+                <span class="stat-value" id="averageRoll">0</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Highest Roll:</span>
+                <span class="stat-value" id="highestRoll">0</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Lowest Roll:</span>
+                <span class="stat-value" id="lowestRoll">0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="history-section">
+          <h3>Roll History</h3>
+          <div class="history-controls">
+            <button id="clearHistory" class="clear-btn">
+              <i class="fas fa-trash"></i> Clear History
+            </button>
+          </div>
+          <div class="history-list" id="historyList">
+            <!-- Roll history will be displayed here -->
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>
+          &copy; 2024 Dice Roll Simulator. Made with
+          <i class="fas fa-heart"></i> for fun!
+        </p>
+      </footer>
+    </div>
+
+    <script src="dice.js"></script>
   </body>
 </html>
